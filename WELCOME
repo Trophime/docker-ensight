@@ -1,2 +1,5 @@
+To enable Hifimagnets plugins, run when first logging:
+ensight102 -no_prefs
+
 To run ensight in batch mode:
 ensight102 [-X] -p script.py -batch

@@ -73,7 +73,7 @@ ENV HOME /home/feelpp
 #ENV LD_LIBRARY_PATH /usr/lib/paraview:$LD_LIBRARY_PATH
 WORKDIR $HOME
 
-COPY WELCOME-$DIST /etc/motd
+COPY WELCOME /etc/motd
 
 # set alias
 RUN echo "alias cp='cp -i'" > $HOME/.bash_aliases && \
