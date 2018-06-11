@@ -32,12 +32,11 @@ RUN apt-get update && \
     apt-get clean -y
 
 # NB Mounted licenses key
-RUN cd /tmp && \
-    wget http://archives.ensight.com/EnSight102/10.2.3a/Full/EnSight102Full-10.2.3a_amd64.deb && \
-    dpkg -i EnSight102Full-10.2.3a_amd64.deb && \
+COPY EnSight102Full-10.2.3c_amd64.deb /tmp
+RUN dpkg -i /tmp/EnSight102Full-10.2.3c_amd64.deb && \
     mkdir -p /opt/licenses && \
     ln -sf /opt/licenses/slim8.key /opt/CEI/license8 && \
-    rm /tmp/EnSight102Full-10.2.3a_amd64.deb
+    rm /tmp/EnSight102Full-10.2.3c_amd64.deb
 
 # # Add Hifimagnet addons (need to be packaged before)
 # COPY Ensight_Hifimagnet.tgz /tmp
